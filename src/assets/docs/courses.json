@@ -1,0 +1,16 @@
+[
+  {
+    "className": "Know More Javascript",
+    "category": "Software",
+    "description": "merupakan mata pelajaran untuk js intermediate",
+    "level": "beginner",
+    "pricing": 0
+  },
+  {
+    "className": "HTML CSS to Code",
+    "category": "Software",
+    "description": "Code your first web page",
+    "level": "intermediate",
+    "pricing": 10
+  }
+]

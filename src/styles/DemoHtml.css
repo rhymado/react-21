@@ -1,0 +1,95 @@
+header {
+  /*Deklarasi*/
+  font-weight: bold;
+  background-color: aqua;
+  border: 2px solid black;
+  padding: 2px;
+}
+
+/*Selector Class*/
+.line-1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Selector Id*/
+#baris-2 {
+  font-family: "Courier New", Courier, monospace;
+}
+
+footer {
+  background-color: chartreuse;
+  border: 5px dashed grey;
+  position: sticky;
+  bottom: 0px;
+}
+
+/*Untuk semua elemen div, berikan efek hover yaitu {declaration}*/
+/* div:hover {
+    font-size: 1.5rem;
+  } */
+
+p::after {
+  content: " - FMB 21";
+}
+
+p::first-letter {
+  font-size: 2rem;
+}
+
+#baris-2::first-line {
+  color: red;
+}
+
+p::selection {
+  background-color: lightgrey;
+  color: blue;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  background-color: bisque;
+  border: 2px solid black;
+  margin: 5px auto;
+}
+
+.container {
+  border: 2px solid black;
+  height: 100vh;
+  position: relative;
+}
+
+.relative {
+  /* top, bottom, left, right */
+  position: relative;
+  top: 20px;
+  right: -20px;
+}
+
+.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -45%);
+}
+
+.absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sticky {
+  position: sticky;
+  top: 10px;
+  margin: 5px 10%;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  background-color: grey;
+}
