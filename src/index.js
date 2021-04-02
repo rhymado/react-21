@@ -15,9 +15,28 @@ const AppWithRouter = () => {
       {/* domain/main/dashboard state.address = dashboard */}
       {/* domain/v1/activity state.address = activity */}
       {/* domain/ => menampilkan App.js*/}
-      <Route path="/" exact component={App} />
+      <Route
+        path="/"
+        exact
+        render={(props) => {
+          return (
+            <>
+              <App {...props} />{" "}
+            </>
+          );
+        }}
+      />
       {/* domain/demo => menampilkan DemoHtml.js */}
-      <Route path="/demo/:content" component={DemoHtml} />
+      <Route
+        path="/demo/:content"
+        render={(props) => {
+          return (
+            <>
+              <DemoHtml {...props} />{" "}
+            </>
+          );
+        }}
+      />
     </Router>
   );
 };

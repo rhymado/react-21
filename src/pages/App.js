@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import Axios from "axios";
+import { Button } from "react-bootstrap";
+
 import Header from "../components/header";
 import Footer from "../components/footer";
+import ModalInput from "../components/modal";
 import "../styles/app.css";
 
-import titles from "../assets/docs/data.json";
+// import titles from "../assets/docs/data.json";
 
 class App extends Component {
   // constructor() {
@@ -14,6 +18,7 @@ class App extends Component {
   //   };
   // }
   state = {
+    users: {},
     day: "Wednesday",
     date: 17,
     clicked: 0,
@@ -42,7 +47,13 @@ class App extends Component {
     input: "Put Your Input Here",
   };
   componentDidMount() {
-    console.log("did mount");
+    Axios.get("http://localhost:8000/users")
+      .then((res) =>
+        this.setState({
+          users: res.data,
+        })
+      )
+      .catch((err) => console.log(err));
   }
   // componentDidUpdate(_, prevState) {
   //   console.log("did update", prevState, this.state);
@@ -55,9 +66,18 @@ class App extends Component {
       input: value,
     });
   };
+  getBackend = () => {
+    Axios.get("http://localhost:8000/users")
+      .then((res) =>
+        this.setState({
+          users: res.data,
+        })
+      )
+      .catch((err) => console.log(err));
+  };
   render() {
     const { location } = this.props;
-    console.log(titles);
+    console.log(this.state.users);
     // console.log("render", location);
     return (
       <>
@@ -84,7 +104,10 @@ class App extends Component {
             value={this.state.input}
             onChange={this.inputChangeHandler}
           />
+          <br />
+          <Button onClick={this.getBackend}>Get Backend</Button>
         </main>
+        <ModalInput />
         <Footer />
       </>
     );
