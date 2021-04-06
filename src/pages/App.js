@@ -48,11 +48,12 @@ class App extends Component {
   };
   componentDidMount() {
     Axios.get("http://localhost:8000/users")
-      .then((res) =>
+      .then((res) => {
+        console.log(res);
         this.setState({
           users: res.data,
-        })
-      )
+        });
+      })
       .catch((err) => console.log(err));
   }
   // componentDidUpdate(_, prevState) {
